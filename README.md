@@ -1,5 +1,9 @@
 # Neo Studio V2
 
+## ℹ️ Sobre este repositório
+
+Estúdio Neo V2 (Python) — ferramenta de IA/produção. Estudo.
+
 **Neo Studio V2** is a local-first AI creative workspace for **Image, Video, Voice, Prompt & Captioning, Roleplay, and Assistant workflows** in one interface.
 
 It is built for creators who want to use their own local AI backends and models without jumping between separate tools for every part of a workflow.
