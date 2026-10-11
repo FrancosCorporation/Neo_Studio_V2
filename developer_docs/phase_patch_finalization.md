@@ -1,4 +1,6 @@
-# Resumable phase validation and patch finalization
+# Maintainer note: resumable phase validation and patch finalization
+
+This document is for maintainers. It is kept outside `guides/` so Neo's built-in Assistant does not present developer release procedures as user guidance. The `scripts/dev/release/` helper is not included in the public source checkout; use it only in a maintainer environment where that tool is available.
 
 Neo development uses `scripts/dev/release/phase_finalizer.py` to make long validation/package runs resumable.
 

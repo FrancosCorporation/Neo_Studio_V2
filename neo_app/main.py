@@ -1209,7 +1209,7 @@ def _uvicorn_log_config(*, dev_mode: bool = False) -> dict:
 def _parse_launch_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run Neo Studio V2")
     parser.add_argument("--host", default=os.environ.get("NEO_HOST", "127.0.0.1"))
-    parser.add_argument("--port", type=int, default=int(os.environ.get("NEO_PORT", "7860")))
+    parser.add_argument("--port", type=int, default=int(os.environ.get("NEO_PORT", "7870")))
     parser.add_argument("--dev", action="store_true", help="Show Uvicorn/access logs in the console and enable reload.")
     parser.add_argument("--verbose", action="store_true", help="Show app startup detail in the console without enabling reload.")
     parser.add_argument("--quiet", action="store_true", help="Only print fatal startup failures from Python launcher.")

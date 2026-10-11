@@ -170,11 +170,11 @@ def runtime_hardening_payload() -> dict[str, Any]:
     }
     env = {
         "NEO_HOST": os.environ.get("NEO_HOST", "127.0.0.1"),
-        "NEO_PORT": os.environ.get("NEO_PORT", "7860"),
+        "NEO_PORT": os.environ.get("NEO_PORT", "7870"),
         "NEO_BACKEND_BASE_URL": os.environ.get("NEO_BACKEND_BASE_URL", "http://localhost:5001"),
     }
     launcher = {
-        "recommended_command": "python -m neo_app.main --host 127.0.0.1 --port 7860",
+        "recommended_command": "python -m neo_app.main --host 127.0.0.1 --port 7870",
         "quiet_command": "python -m neo_app.main --quiet",
         "dev_command": "python -m neo_app.main --dev",
         "portable_policy": "Keep runtime writes inside neo_data; avoid absolute user-machine paths in records when a Neo-relative path can be stored.",

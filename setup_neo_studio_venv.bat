@@ -108,7 +108,7 @@ echo To start Neo Studio V2, run:
 echo   run_neo_studio.bat
 echo.
 echo Then open:
-echo   http://127.0.0.1:7860
+echo   http://127.0.0.1:7870
 echo ============================================================
 echo.
 pause
