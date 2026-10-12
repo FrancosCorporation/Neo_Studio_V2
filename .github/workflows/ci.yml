@@ -1,0 +1,42 @@
+name: Static validation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  static-validation:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Parse tracked Python and JSON files
+        run: |
+          python - <<'PY'
+          import ast
+          import json
+          import subprocess
+          from pathlib import Path
+
+          files = subprocess.run(
+              ["git", "ls-files", "-z"], check=True, capture_output=True
+          ).stdout.decode("utf-8").split("\0")
+          python_files = [Path(name) for name in files if name.endswith(".py")]
+          json_files = [Path(name) for name in files if name.endswith(".json")]
+
+          for path in python_files:
+              ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+          for path in json_files:
+              json.loads(path.read_text(encoding="utf-8"))
+
+          print(f"Parsed {len(python_files)} Python files and {len(json_files)} JSON files.")
+          PY
