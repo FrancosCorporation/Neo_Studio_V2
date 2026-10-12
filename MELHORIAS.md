@@ -4,6 +4,7 @@
 
 - [x] Adicionar CI estática em Ubuntu 24.04 para analisar sintaxe dos arquivos Python e JSON nas versões Python 3.10 e 3.12.
 - [x] Limitar o token padrão do workflow a `contents: read`.
+- [x] Confirmar CI `38196290531` verde nos dois alvos Python (3.10 e 3.12); 634 arquivos Python e 126 JSON foram analisados sem instalar dependências.
 
 ## Verificações pendentes
 
